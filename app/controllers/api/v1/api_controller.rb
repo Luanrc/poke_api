@@ -1,5 +1,5 @@
 module Api::V1
-  class PokemonsController < ApiController::Serialization
+  class ApiController < ApplicationController
 
   end
 
