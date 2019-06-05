@@ -76,7 +76,7 @@ class Api::V1::PokemonsController < Api::V1::ApiController
 
    def pokemon_params
 
-     params.require(:pokemon).permit(:pokemon_name, :pokemon_type_id, :user_id)
+     params.require(:pokemon).permit(:pokemon_name, :pokemon_type_id, :gender_id, :user_id)
 
    end
 
