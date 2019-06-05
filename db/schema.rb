@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_231101) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "type_name"
+    t.integer "pokemon_type_id"
     t.index ["user_id"], name: "index_pokemons_on_user_id"
   end
 
