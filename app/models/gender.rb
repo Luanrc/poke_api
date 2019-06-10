@@ -1,3 +1,3 @@
 class Gender < ApplicationRecord
-  has_many :pokemons, dependent: :destroy
+  belongs_to :pokemon, dependent: :destroy
 end

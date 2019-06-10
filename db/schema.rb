@@ -10,30 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_05_203823) do
+ActiveRecord::Schema.define(version: 2019_06_10_003020) do
 
   create_table "genders", force: :cascade do |t|
-    t.integer "gender_value"
+    t.string "gender_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemon_types", force: :cascade do |t|
+    t.string "pokemon_type_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "pokemons", force: :cascade do |t|
     t.string "pokemon_name"
-    t.string "pokemon_type"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "type_name"
-    t.integer "pokemon_type_id"
+    t.integer "type_id"
     t.integer "gender_id"
-    t.index ["user_id"], name: "index_pokemons_on_user_id"
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string "type_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pokemon_type_id"
+    t.string "gender_name"
+    t.index ["gender_id"], name: "index_pokemons_on_gender_id"
+    t.index ["type_id"], name: "index_pokemons_on_type_id"
+    t.index ["user_id"], name: "index_pokemons_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

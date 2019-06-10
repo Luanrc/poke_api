@@ -1,4 +1,4 @@
-class AddTypeToPokemon < ActiveRecord::Migration[5.2]
+class AddPokemonTypeToPokemon < ActiveRecord::Migration[5.2]
   def change
     add_column :pokemons, :pokemon_type_id, :int
   end
